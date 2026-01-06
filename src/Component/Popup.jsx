@@ -33,12 +33,12 @@ const Popup = ({ open, onClose }) => {
 
                 {/* Content */}
                 <div className="p-8">
-                    <img src={logo} alt="logo" className="h-[52px] mx-auto mb-4" />
+                    <img src={logo} alt="logo" className="h-[50px] mx-auto mb-2" />
 
                     <h3 className="text-2xl font-bold text-center text-gray-800">
                         Enquiry for Parts
                     </h3>
-                    <p className="text-center text-sm text-gray-500 mb-6">
+                    <p className="text-center text-sm text-gray-500 mb-3">
                         Tell us what you need — we’ll get back fast 🚀
                     </p>
 
