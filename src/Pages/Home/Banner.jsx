@@ -7,9 +7,9 @@ import 'aos/dist/aos.css';
 
 const Banner = () => {
   const navigate = useNavigate();
-   useEffect(() => {
-        AOS.init({ duration: 1000 });
-    }, []);
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   return (
     <section
@@ -28,11 +28,15 @@ const Banner = () => {
         <div className="max-w-2xl text-white backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl">
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-[#ec2324]/20 border border-[#ec2324]
-            text-[#ec2324] px-4 py-1 rounded-full text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 
+          bg-yellow-100 
+          border border-yellow-300
+        text-yellow-700 
+          px-4 py-1 rounded-full text-sm font-semibold mb-6">
             <FaCar className="text-base" />
             Trusted Auto Parts Store
           </div>
+
 
           {/* Heading */}
           <h1 className="sm:text-4xl text-2xl md:text-4xl font-extrabold leading-tight tracking-tight">
@@ -53,13 +57,13 @@ const Banner = () => {
 
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
-            <button onClick={()=> navigate('/contact')} className="group flex items-center gap-2 bg-[#ec2324] px-8 py-3 rounded-md font-semibold shadow-lg
+            <button onClick={() => navigate('/contact')} className="group flex items-center gap-2 bg-[#ec2324] px-8 py-3 rounded-md font-semibold shadow-lg
               hover:shadow-red-500/40 transition-all duration-300 hover:scale-105">
               Shop Now
               <FaArrowRight className="group-hover:translate-x-1 transition" />
             </button>
 
-            <button onClick={()=> navigate('/category-detail')} className="border border-white/70 px-8 py-3 rounded-md font-semibold
+            <button onClick={() => navigate('/category-detail')} className="border border-white/70 px-8 py-3 rounded-md font-semibold
               hover:bg-white hover:text-black transition-all duration-300 hover:scale-105">
               Explore Categories
             </button>

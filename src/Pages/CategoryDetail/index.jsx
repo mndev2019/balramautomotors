@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // Import realistic images
 import commercialImg from "../../assets/Image/commercial.png";
@@ -7,6 +7,7 @@ import heavyImg from "../../assets/Image/heavy.png";
 import earthImg from "../../assets/Image/earthmoving.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Popup from "../../Component/Popup";
 
 const categories = [
   {
@@ -36,6 +37,7 @@ const categories = [
 ];
 
 const CategoryDetail = () => {
+   const [openCart, setOpenCart] = useState(false);
    useEffect(() => {
       AOS.init({ duration: 1000 });
     }, []);
@@ -99,7 +101,7 @@ const CategoryDetail = () => {
                   </p>
 
                   {/* Button */}
-                  <button className="mt-6 px-5 py-2 bg-[#ec2324] text-white rounded-full text-sm font-semibold shadow-lg hover:bg-black transition-all duration-300">
+                  <button  onClick={() => setOpenCart(true)} className="mt-6 px-5 py-2 bg-[#ec2324] text-white rounded-full text-sm font-semibold shadow-lg hover:bg-black transition-all duration-300">
                     Learn More
                   </button>
                 </div>
@@ -108,6 +110,7 @@ const CategoryDetail = () => {
           </div>
         </div>
       </section>
+        <Popup open={openCart} onClose={() => setOpenCart(false)} />
     </>
   );
 };

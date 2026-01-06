@@ -7,6 +7,7 @@ import Contact from './Pages/Contact'
 import AboutUs from './Pages/About'
 import CategoryDetail from './Pages/CategoryDetail'
 import ServiceDetail from './Pages/ServiceDetail'
+import Shop from './Pages/Shop'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/about-us' element={<AboutUs/>}/>
           <Route path='/category-detail' element={<CategoryDetail/>}/>
           <Route path='/service-detail' element={<ServiceDetail/>}/>
+          <Route path='/shop' element={<Shop/>}/>
 
 
         </Route>

@@ -1,5 +1,6 @@
 import React from "react";
 // import loaderGif from '../assets/Image/loadergif.gif'
+import logo from "../assets/Image/newlogo.png";
 
 const Loader = () => {
   return (
@@ -8,6 +9,7 @@ const Loader = () => {
     // </div>
     <div className="overlay">
       <div class="car-container">
+        <img src={logo} className="h-[40px] z-20 absolute bottom-[48%] left-[18%]"/>
         <div class="car">
           <div class="window"></div>
           <div class="cargo-details"></div>

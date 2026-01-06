@@ -30,6 +30,7 @@ const WebLayout = () => {
   return (
     <>
       {loading && <Loader />}
+      {/* <Loader/> */}
 
       <div className={loading ? "opacity-50 pointer-events-none" : ""}>
         <Header />
@@ -43,3 +44,6 @@ const WebLayout = () => {
 };
 
 export default WebLayout;
+
+
+
