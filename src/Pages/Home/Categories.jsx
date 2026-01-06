@@ -7,8 +7,10 @@ import tires from "../../assets/Image/tires.png";
 import tools from "../../assets/Image/tools.png";
 import filter from "../../assets/Image/filter.png";
 import cables from '../../assets/Image/cable.png'
+import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
+  const navigate = useNavigate();
   const categories = [
     
     { title: "Braking System", image: braking },
@@ -42,7 +44,7 @@ const Categories = () => {
             </p>
           </div>
 
-          <button className="group flex items-center gap-2 text-[#ec2324] font-semibold">
+          <button onClick={()=> navigate('/category-detail')} className="group flex items-center gap-2 text-[#ec2324] font-semibold">
             See All
             <HiArrowNarrowRight className="text-xl group-hover:translate-x-1 transition" />
           </button>
