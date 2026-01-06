@@ -1,8 +1,10 @@
 import React from "react";
 import bg from "../../assets/Image/truck.jpg";
 import { FaCar, FaArrowRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <section
       className="relative h-[95vh] flex items-center bg-cover bg-center overflow-hidden lg:pt-[100px] my-10"
@@ -45,13 +47,13 @@ const Banner = () => {
 
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="group flex items-center gap-2 bg-[#ec2324] px-8 py-3 rounded-md font-semibold shadow-lg
+            <button onClick={()=> navigate('/contact')} className="group flex items-center gap-2 bg-[#ec2324] px-8 py-3 rounded-md font-semibold shadow-lg
               hover:shadow-red-500/40 transition-all duration-300 hover:scale-105">
               Shop Now
               <FaArrowRight className="group-hover:translate-x-1 transition" />
             </button>
 
-            <button className="border border-white/70 px-8 py-3 rounded-md font-semibold
+            <button onClick={()=> navigate('/category-detail')} className="border border-white/70 px-8 py-3 rounded-md font-semibold
               hover:bg-white hover:text-black transition-all duration-300 hover:scale-105">
               Explore Categories
             </button>
