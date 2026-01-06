@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -8,8 +8,13 @@ import {
   FaPen,
   FaPaperPlane,
 } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Contact = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <section className="bg-white">
 
@@ -44,7 +49,7 @@ const Contact = () => {
         {/* INFO GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-24">
 
-          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition">
+          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition" data-aos="flip-up">
             <FaGlobeAsia className="text-[#ec2324] text-3xl mb-4" />
             <h3 className="text-xl font-bold text-gray-900">
               International Presence
@@ -55,7 +60,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition">
+          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition" data-aos="flip-up">
             <FaMapMarkerAlt className="text-[#ec2324] text-3xl mb-4" />
             <h3 className="text-xl font-bold text-gray-900">
               Branch Office
@@ -65,7 +70,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition">
+          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition" data-aos="flip-up">
             <FaPhoneAlt className="text-[#ec2324] text-3xl mb-4" />
             <h3 className="text-xl font-bold text-gray-900">
               Call Support
@@ -75,7 +80,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition">
+          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition" data-aos="flip-up">
             <FaEnvelope className="text-[#ec2324] text-3xl mb-4" />
             <h3 className="text-xl font-bold text-gray-900">
               Email Support

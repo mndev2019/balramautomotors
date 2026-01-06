@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaUserTie, FaAward, FaClock } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const stats = [
     {
@@ -26,6 +28,9 @@ const stats = [
 ];
 
 const TeamSection = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, []);
     return (
         <section className="relative md:py-28 py-10 bg-gray-50 overflow-hidden">
             {/* Background Blur Shapes */}
@@ -35,7 +40,7 @@ const TeamSection = () => {
             <div className="max-w-7xl mx-auto px-6 relative z-10">
 
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-16" data-aos="flip-left">
                     <span className="inline-block mb-4 text-sm font-bold tracking-widest text-[#ec2324] uppercase">
                         Team & Legacy
                     </span>
@@ -53,6 +58,7 @@ const TeamSection = () => {
                         <div
                             key={index}
                             className="group relative bg-white p-10 rounded-3xl shadow-2xl overflow-hidden transition hover:shadow-3xl cursor-pointer"
+                            data-aos="zoom-in"
                         >
                             {/* Decorative Gradient Circle */}
                             <div className={`absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br ${item.color} opacity-30 transform rotate-12 group-hover:scale-110 transition-transform duration-500`}></div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 import braking from "../../assets/Image/braking.png";
@@ -8,13 +8,18 @@ import tools from "../../assets/Image/tools.png";
 import filter from "../../assets/Image/filter.png";
 import cables from '../../assets/Image/cable.png'
 import { useNavigate } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Categories = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   const categories = [
-    
+
     { title: "Braking System", image: braking },
-     { title: "Clutch System", image: clutch },
+    { title: "Clutch System", image: clutch },
     { title: "Tires & Wheels", image: tires },
     { title: "Tools & Equipment", image: tools },
     { title: "Filters", image: filter },
@@ -28,7 +33,7 @@ const Categories = () => {
         {/* Header */}
         {/* Header */}
         <div className="flex flex-wrap items-end justify-between gap-6 mb-16">
-          <div>
+          <div data-aos="fade-right">
             <span className="inline-block mb-3 px-4 py-1 text-xs font-bold tracking-widest text-[#ec2324] uppercase bg-[#ec2324]/10 rounded-full">
               Commercial & Heavy Vehicles
             </span>
@@ -44,7 +49,7 @@ const Categories = () => {
             </p>
           </div>
 
-          <button onClick={()=> navigate('/category-detail')} className="group flex items-center gap-2 text-[#ec2324] font-semibold">
+          <button onClick={() => navigate('/category-detail')} className="group flex items-center gap-2 text-[#ec2324] font-semibold">
             See All
             <HiArrowNarrowRight className="text-xl group-hover:translate-x-1 transition" />
           </button>

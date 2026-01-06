@@ -5,6 +5,8 @@ import leyland from '../../assets/Image/leyland.jpg'
 import jcb from '../../assets/Image/jcb.png'
 import mahindra from '../../assets/Image/mahindra.png'
 import UPSRTC from '../../assets/Image/UPSRTC.webp'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Example client logos (replace with your real images)
 const clientLogos = [
@@ -17,6 +19,9 @@ const clientLogos = [
 
 const ClientsSection = () => {
   const [count, setCount] = useState(0);
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   // Animated counter effect
   useEffect(() => {
@@ -46,7 +51,7 @@ const ClientsSection = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="flip-left">
           <span className="inline-block mb-4 text-sm font-bold tracking-widest text-[#ec2324] uppercase">
             Our Clients
           </span>

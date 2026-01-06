@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaShippingFast, FaTools, FaShieldAlt, FaHeadset } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const services = [
   {
@@ -29,9 +31,12 @@ const services = [
 ];
 
 const Service = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <section className="md:py-28 py-10 bg-white relative overflow-hidden">
-      
+
       {/* Decorative Shapes */}
       <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#ec2324]/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-black/5 rounded-full blur-3xl"></div>
@@ -58,12 +63,12 @@ const Service = () => {
             <span className="absolute -top-6 left-6 text-sm uppercase tracking-widest text-[#ec2324] font-bold">
               Since 2018
             </span>
-             <h3 className="text-3xl font-extrabold">
-                   10 Lakh+
-                    <span className="block text-base font-medium text-gray-400 mt-1">
-                                    Parts Delivered
-                      </span>
-                   </h3>
+            <h3 className="text-3xl font-extrabold">
+              10 Lakh+
+              <span className="block text-base font-medium text-gray-400 mt-1">
+                Parts Delivered
+              </span>
+            </h3>
 
             <div className="mt-6 h-[2px] w-20 bg-[#ec2324]"></div>
 
@@ -82,6 +87,7 @@ const Service = () => {
               bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)]
               hover:shadow-[0_30px_80px_rgba(236,35,36,0.25)]
               transition-all duration-500 hover:-translate-y-2"
+              data-aos="zoom-in"
             >
               {/* Number */}
               <span className="absolute -top-6 -right-6 text-7xl font-extrabold text-gray-100 group-hover:text-[#ec2324]/10 transition">

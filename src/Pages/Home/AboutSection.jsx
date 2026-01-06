@@ -123,13 +123,18 @@
 // };
 
 // export default AboutSection;
-import React from "react";
+import React, { useEffect } from "react";
 import { FaTruckMoving, FaCogs, FaShieldAlt } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const AboutSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <section className="relative py-28  bg-white overflow-hidden">
-      
+
       {/* Background Typography */}
       <h1 className="absolute -top-10 left-1/2 -translate-x-1/2 md:text-[120px] text-[80px] md:text-[180px] font-extrabold text-gray-100 tracking-widest select-none md:mt-0 mt-3">
         ABOUT
@@ -140,7 +145,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-20 gap-15 items-start">
 
           {/* Left Statement Block */}
-          <div className="relative">
+          <div className="relative" data-aos="fade-right">
             {/* Red Rail */}
             <div className="absolute -left-6 top-0 h-full w-1 bg-[#ec2324]"></div>
 

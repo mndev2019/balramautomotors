@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Import realistic images
 import commercialImg from "../../assets/Image/commercial.png";
 import passengerImg from "../../assets/Image/passenger.png";
 import heavyImg from "../../assets/Image/heavy.png";
 import earthImg from "../../assets/Image/earthmoving.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const categories = [
   {
@@ -34,6 +36,9 @@ const categories = [
 ];
 
 const CategoryDetail = () => {
+   useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, []);
   return (
     <>
       {/* Banner */}
@@ -63,6 +68,7 @@ const CategoryDetail = () => {
               <div
                 key={index}
                 className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 cursor-pointer"
+                data-aos="zoom-in"
               >
                 {/* Gradient Circle Background */}
                 <div

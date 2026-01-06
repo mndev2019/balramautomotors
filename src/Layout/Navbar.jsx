@@ -246,11 +246,10 @@ const Navbar = () => {
                 className="w-full border rounded-lg px-4 py-3 focus:ring-1 focus:ring-[#ec2324] outline-none"
               >
                 <option value="">Select Vehicle Type</option>
-                <option>Two Wheeler</option>
-                <option>Three Wheeler</option>
-                <option>Passenger Vehicle</option>
-                <option>Commercial Vehicle</option>
-                <option>Tractor</option>
+                <option>Car</option>
+                <option>Heavy Commercial Vehicle</option>
+                <option>JCB / Earth Moving</option>
+             
               </select>
 
               <textarea

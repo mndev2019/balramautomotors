@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import bg from "../../assets/Image/truck.jpg";
 import { FaCar, FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Banner = () => {
   const navigate = useNavigate();
+   useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, []);
+
   return (
     <section
       className="relative h-[95vh] flex items-center bg-cover bg-center overflow-hidden lg:pt-[100px] my-10"
@@ -18,7 +24,7 @@ const Banner = () => {
       <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-[#ec2324]/20 rounded-full blur-[100px]"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-8xl mx-auto px-6 w-full banner">
+      <div className="relative z-10 max-w-8xl mx-auto px-6 w-full banner" data-aos="fade-left">
         <div className="max-w-2xl text-white backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl">
 
           {/* Badge */}
