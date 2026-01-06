@@ -128,10 +128,10 @@ import { FaTruckMoving, FaCogs, FaShieldAlt } from "react-icons/fa";
 
 const AboutSection = () => {
   return (
-    <section className="relative md:py-28 py-10 bg-white overflow-hidden">
+    <section className="relative py-28  bg-white overflow-hidden">
       
       {/* Background Typography */}
-      <h1 className="absolute -top-10 left-1/2 -translate-x-1/2 md:text-[120px] text-[80px] md:text-[180px] font-extrabold text-gray-100 tracking-widest select-none">
+      <h1 className="absolute -top-10 left-1/2 -translate-x-1/2 md:text-[120px] text-[80px] md:text-[180px] font-extrabold text-gray-100 tracking-widest select-none md:mt-0 mt-3">
         ABOUT
       </h1>
 

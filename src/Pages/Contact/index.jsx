@@ -108,7 +108,7 @@ const Contact = () => {
           </div>
 
           {/* STYLISH FORM (UPDATED ONLY) */}
-          <div className="lg:col-span-2 relative bg-white border border-gray-200 rounded-3xl shadow-2xl p-10 overflow-hidden">
+          <div className="lg:col-span-2 relative bg-white border border-gray-200 rounded-3xl shadow-2xl md:p-10 p-5 overflow-hidden">
 
             {/* Decorative Elements */}
             <div className="absolute -top-16 -right-16 w-32 h-32 bg-[#ec2324]/20 rounded-full"></div>

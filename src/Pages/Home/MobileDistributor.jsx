@@ -90,7 +90,7 @@ import menon from '../../assets/Image/mb.png'
 import acey from '../../assets/Image/acey.jpeg'
 import bg from '../../assets/Image/truck.jpg'
 
-const DistributorSection = () => {
+const MobileDistributor = () => {
   const distributors = [
     {
       name: "Mahindra Genuine Spare Parts",
@@ -116,31 +116,22 @@ const DistributorSection = () => {
 
   const settings = {
     arrows: false,
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 800,
-    slidesToShow: 3,
+    speed: 1000,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 640,
-        settings: { slidesToShow: 1 },
-      },
-    ],
+
   };
 
   return (
     <section
-      className="relative w-full lg:px-20 px-5 py-16 bg-center bg-no-repeat bg-cover md:block hidden"
+      className="relative w-full lg:px-20 px-5 py-16 bg-center bg-no-repeat bg-cover md:hidden block"
       style={{ backgroundImage: `url(${bg})` }}
     >
-       <div className="absolute inset-0 bg-[#0e1f17]/80"></div>
+      <div className="absolute inset-0 bg-[#0e1f17]/80"></div>
       <div className="relative  grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
 
         {/* Left Side */}
@@ -221,4 +212,4 @@ const DistributorSection = () => {
   );
 };
 
-export default DistributorSection;
+export default MobileDistributor;
