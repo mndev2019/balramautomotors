@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -8,13 +8,75 @@ import {
   FaPen,
   FaPaperPlane,
 } from "react-icons/fa";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { BaseUrl } from "../../API/BaseUrl"; // apne path ke according change karein
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    requirement: "",
+    vehicleType: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (loading) return;
+
+    try {
+      setLoading(true);
+
+      const response = await axios.post(
+        `${BaseUrl}/enquiry`,
+        formData
+      );
+
+      if (response.data.success) {
+        toast.success("Enquiry submitted successfully!");
+
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          requirement: "",
+          vehicleType: "",
+        });
+      }
+    } catch (error) {
+      console.error("Enquiry submission error:", error);
+
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="bg-white">
 
@@ -34,7 +96,8 @@ const Contact = () => {
             </span>
             <br /> Vehicle Spare Parts Supply
           </h1>
-          <p className="mt-6 text-gray-300 max-w-2xl ">
+
+          <p className="mt-6 text-gray-300 max-w-2xl">
             Operating across India, Sri Lanka, Nepal, and Bangladesh with a
             strong local presence and dependable service.
           </p>
@@ -44,53 +107,73 @@ const Contact = () => {
       {/* CONTENT */}
       <div className="relative max-w-7xl mx-auto px-6 md:py-28 py-10">
 
-
-
         {/* INFO GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-24">
 
-          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition" data-aos="flip-up">
+          <div
+            className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition"
+            data-aos="flip-up"
+          >
             <FaGlobeAsia className="text-[#ec2324] text-3xl mb-4" />
+
             <h3 className="text-xl font-bold text-gray-900">
               International Presence
             </h3>
+
             <p className="mt-3 text-gray-600">
               Serving heavy vehicle markets across
               <strong> India, Sri Lanka, Nepal & Bangladesh</strong>.
             </p>
           </div>
 
-          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition" data-aos="flip-up">
+          <div
+            className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition"
+            data-aos="flip-up"
+          >
             <FaMapMarkerAlt className="text-[#ec2324] text-3xl mb-4" />
+
             <h3 className="text-xl font-bold text-gray-900">
               Branch Office
             </h3>
+
             <p className="mt-3 text-gray-600">
-              123/136, 1st Floor Gdanian Purwa Kanpur 208012, Uttar Pradesh India
+              123/136, 1st Floor Gdanian Purwa Kanpur 208012, Uttar Pradesh
+              India
             </p>
           </div>
 
-          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition" data-aos="flip-up">
+          <div
+            className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition"
+            data-aos="flip-up"
+          >
             <FaPhoneAlt className="text-[#ec2324] text-3xl mb-4" />
+
             <h3 className="text-xl font-bold text-gray-900">
               Call Support
             </h3>
+
             <p className="mt-3 text-gray-600">
               +91 XXXXX XXXXX <br /> Mon – Sat | 10 AM – 6 PM
             </p>
           </div>
 
-          <div className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition" data-aos="flip-up">
+          <div
+            className="bg-white p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition"
+            data-aos="flip-up"
+          >
             <FaEnvelope className="text-[#ec2324] text-3xl mb-4" />
+
             <h3 className="text-xl font-bold text-gray-900">
               Email Support
             </h3>
-            <p className="mt-3 text-gray-600">
-              info@balramautomotive.com <br />
-              support@balramautomotive.com
-            </p>
-          </div>
 
+            <a
+            href="mailto:info@balramautomotive.com"
+            className="mt-3 text-gray-600"
+          >
+            balramautomation@gmail.com
+          </a>
+          </div>
         </div>
 
         {/* MAP + FORM */}
@@ -112,98 +195,150 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* STYLISH FORM (UPDATED ONLY) */}
+          {/* FORM */}
           <div className="lg:col-span-2 relative bg-white border border-gray-200 rounded-3xl shadow-2xl md:p-10 p-5 overflow-hidden">
 
             {/* Decorative Elements */}
             <div className="absolute -top-16 -right-16 w-32 h-32 bg-[#ec2324]/20 rounded-full"></div>
+
             <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-[#ec2324]/10 rounded-full"></div>
 
             <h3 className="text-2xl font-extrabold text-gray-900 mb-2 relative z-10">
               Request a Call Back
             </h3>
+
             <p className="text-gray-500 mb-8 relative z-10">
               Share your details and our team will reach out shortly.
             </p>
 
-            <form className="space-y-6 relative z-10">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6 relative z-10"
+            >
 
               {/* Name */}
               <div className="relative">
                 <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Full Name"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300
-                  focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30
-                  outline-none transition"
+                  required
+                  disabled={loading}
+                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 
+                  focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30 
+                  outline-none transition disabled:bg-gray-100 disabled:cursor-not-allowed"
                 />
               </div>
 
               {/* Phone */}
               <div className="relative">
                 <FaPhoneAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="Phone Number"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300
-                  focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30
-                  outline-none transition"
+                  required
+                  disabled={loading}
+                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 
+                  focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30 
+                  outline-none transition disabled:bg-gray-100 disabled:cursor-not-allowed"
                 />
               </div>
-              {/* Vehicle Type Select */}
+
+              {/* Vehicle Type */}
               <div className="relative">
                 <select
-                  className="w-full pl-4 pr-4 py-3 rounded-xl border border-gray-300
-      focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30
-      outline-none transition text-gray-700 bg-white"
+                  name="vehicleType"
+                  value={formData.vehicleType}
+                  onChange={handleChange}
+                  required
+                  disabled={loading}
+                  className="w-full pl-4 pr-4 py-3 rounded-xl border border-gray-300 
+                  focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30 
+                  outline-none transition text-gray-700 bg-white
+                  disabled:bg-gray-100 disabled:cursor-not-allowed"
                 >
                   <option value="">Select Vehicle Type</option>
                   <option value="car">Car</option>
-                  <option value="heavy-commercial">Heavy Commercial Vehicle</option>
-                  <option value="earth-moving">JCB / Earth Moving</option>
+                  <option value="heavy commercial vehicle">
+                    Heavy Commercial Vehicle
+                  </option>
+                  <option value="jcb/earth moving">
+                    JCB / Earth Moving
+                  </option>
                 </select>
               </div>
 
               {/* Email */}
               <div className="relative">
                 <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Email Address"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300
-                  focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30
-                  outline-none transition"
+                  required
+                  disabled={loading}
+                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 
+                  focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30 
+                  outline-none transition disabled:bg-gray-100 disabled:cursor-not-allowed"
                 />
               </div>
 
-              {/* Message */}
+              {/* Requirement */}
               <div className="relative">
                 <FaPen className="absolute left-4 top-4 text-gray-400" />
+
                 <textarea
+                  name="requirement"
+                  value={formData.requirement}
+                  onChange={handleChange}
                   rows="4"
                   placeholder="Your Requirement"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300
-                  focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30
-                  outline-none transition resize-none"
+                  required
+                  disabled={loading}
+                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 
+                  focus:border-[#ec2324] focus:ring-2 focus:ring-[#ec2324]/30 
+                  outline-none transition resize-none
+                  disabled:bg-gray-100 disabled:cursor-not-allowed"
                 ></textarea>
               </div>
 
               {/* Button */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-3 py-3 rounded-xl
-                bg-gradient-to-r from-[#ec2324] to-red-600
-                hover:from-black hover:to-gray-900
-                text-white font-bold shadow-lg hover:shadow-2xl
-                transition-all duration-300"
+                disabled={loading}
+                className={`w-full flex items-center justify-center gap-3 py-3 rounded-xl 
+                text-white font-bold shadow-lg transition-all duration-300
+                ${
+                  loading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-gradient-to-r from-[#ec2324] to-red-600 hover:from-black hover:to-gray-900 hover:shadow-2xl"
+                }`}
               >
-                Submit Request <FaPaperPlane />
+                {loading ? (
+                  <>
+                    <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    Submit Request <FaPaperPlane />
+                  </>
+                )}
               </button>
 
             </form>
           </div>
-
         </div>
       </div>
     </section>
