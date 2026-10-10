@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from '../assets/Image/newlogo.png'
 
@@ -57,13 +57,13 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h3 className="text-xl font-bold mb-4 text-[#ec2324]">Contact Us</h3>
-          <p className="text-gray-300">Kanpur, Uttar Pradesh, India</p>
+         
 
           <a
-            href="tel:+91XXXXXXXXXX"
+            href="tel:+919450292127"
             className="text-gray-300 mt-1 block hover:text-orange-500 transition-colors"
           >
-            +91 XXXXX XXXXX
+            +919450292127
           </a>
 
           <a
@@ -78,12 +78,54 @@ const Footer = () => {
 
         {/* Social Media */}
         <div>
-          <h3 className="text-xl font-bold mb-4 text-[#ec2324]">Follow Us</h3>
-          <div className="flex gap-4 mt-2">
-            <a href="#" className="hover:text-[#ec2324] transition"><FaFacebookF /></a>
-            <a href="#" className="hover:text-[#ec2324] transition"><FaInstagram /></a>
-            <a href="#" className="hover:text-[#ec2324] transition"><FaLinkedinIn /></a>
-            <a href="#" className="hover:text-[#ec2324] transition"><FaWhatsapp /></a>
+          <h3 className="text-xl font-bold mb-4 text-[#ec2324]">
+            Follow Us
+          </h3>
+
+          <div className="flex gap-4 mt-2 text-xl">
+            {/* YouTube */}
+            <a
+              href="https://www.youtube.com/@Balramautomotive"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="hover:text-[#ec2324] transition"
+            >
+              <FaYoutube />
+            </a>
+
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/BalramAutomation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:text-[#ec2324] transition"
+            >
+              <FaFacebookF />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/blramautomotive/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-[#ec2324] transition"
+            >
+              <FaInstagram />
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/919450292127"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="hover:text-[#ec2324] transition"
+            >
+              <FaWhatsapp />
+            </a>
           </div>
         </div>
 

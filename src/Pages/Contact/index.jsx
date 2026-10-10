@@ -70,7 +70,7 @@ const Contact = () => {
 
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again."
+        "Something went wrong. Please try again."
       );
     } finally {
       setLoading(false);
@@ -152,9 +152,12 @@ const Contact = () => {
               Call Support
             </h3>
 
-            <p className="mt-3 text-gray-600">
-              +91 XXXXX XXXXX <br /> Mon – Sat | 10 AM – 6 PM
-            </p>
+            <a
+              href="tel:+919450292127"
+              className="mt-3 text-gray-600 hover:text-[#ec2324] transition"
+            >
+              +91 9450292127
+            </a>
           </div>
 
           <div
@@ -168,11 +171,11 @@ const Contact = () => {
             </h3>
 
             <a
-            href="mailto:info@balramautomotive.com"
-            className="mt-3 text-gray-600"
-          >
-            balramautomation@gmail.com
-          </a>
+              href="mailto:info@balramautomotive.com"
+              className="mt-3 text-gray-600"
+            >
+              balramautomation@gmail.com
+            </a>
           </div>
         </div>
 
@@ -182,18 +185,24 @@ const Contact = () => {
           {/* MAP */}
           <div className="lg:col-span-3 relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
             <iframe
-              title="Kanpur Branch"
-              src="https://www.google.com/maps?q=Kanpur,%20Uttar%20Pradesh&output=embed"
+              title="Balram Automotive - Kanpur Branch"
+              src="https://maps.google.com/maps?q=123%2F136%2C%201st%20Floor%2C%20Gadanian%20Purwa%2C%20Kanpur%2C%20Uttar%20Pradesh%20208012%2C%20India&output=embed"
               className="w-full h-full min-h-[460px]"
               loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
 
             <div className="absolute top-6 left-6 bg-white px-6 py-3 rounded-xl shadow-lg border-l-4 border-[#ec2324]">
               <p className="text-sm font-bold text-gray-900">
+                Balram Automotive
+              </p>
+              <p className="text-xs text-gray-600 mt-1">
                 Kanpur Branch Office
               </p>
             </div>
           </div>
+
 
           {/* FORM */}
           <div className="lg:col-span-2 relative bg-white border border-gray-200 rounded-3xl shadow-2xl md:p-10 p-5 overflow-hidden">
@@ -319,11 +328,10 @@ const Contact = () => {
                 disabled={loading}
                 className={`w-full flex items-center justify-center gap-3 py-3 rounded-xl 
                 text-white font-bold shadow-lg transition-all duration-300
-                ${
-                  loading
+                ${loading
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-gradient-to-r from-[#ec2324] to-red-600 hover:from-black hover:to-gray-900 hover:shadow-2xl"
-                }`}
+                  }`}
               >
                 {loading ? (
                   <>
