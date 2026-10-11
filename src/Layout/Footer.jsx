@@ -67,10 +67,10 @@ const Footer = () => {
           </a>
 
           <a
-            href="mailto:info@balramautomotive.com"
+            href="mailto:info@blramautomotive.in"
             className="text-gray-300 mt-1 block hover:text-orange-500 transition-colors"
           >
-            balramautomation@gmail.com
+            info@blramautomotive.in
           </a>
 
 

@@ -171,19 +171,20 @@ const Contact = () => {
             </h3>
 
             <a
-              href="mailto:info@balramautomotive.com"
+              href="mailto:info@blramautomotive.in"
               className="mt-3 text-gray-600"
             >
-              balramautomation@gmail.com
+              info@blramautomotive.in
             </a>
           </div>
         </div>
 
         {/* MAP + FORM */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-stretch">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-stretch"> */}
+        <div className="grid grid-cols-1  gap-16 items-stretch">
 
           {/* MAP */}
-          <div className="lg:col-span-3 relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
+          {/* <div className="lg:col-span-3 relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
             <iframe
               title="Balram Automotive - Kanpur Branch"
               src="https://maps.google.com/maps?q=123%2F136%2C%201st%20Floor%2C%20Gadanian%20Purwa%2C%20Kanpur%2C%20Uttar%20Pradesh%20208012%2C%20India&output=embed"
@@ -201,7 +202,7 @@ const Contact = () => {
                 Kanpur Branch Office
               </p>
             </div>
-          </div>
+          </div> */}
 
 
           {/* FORM */}

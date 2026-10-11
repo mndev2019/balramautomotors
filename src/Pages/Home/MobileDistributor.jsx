@@ -89,6 +89,7 @@ import msl from '../../assets/Image/msl.png'
 import menon from '../../assets/Image/mb.png'
 import acey from '../../assets/Image/acey.jpeg'
 import bg from '../../assets/Image/truck.jpg'
+import jcb from '../../assets/Image/jcb.png'
 
 const MobileDistributor = () => {
   const distributors = [
@@ -112,6 +113,11 @@ const MobileDistributor = () => {
       desc: "Authorized distribution partner delivering dependable engineering components with assured quality.",
       logo: acey,
     },
+    {
+  name: "JCB",
+  desc: "Reliable JCB genuine spare parts and engineering components designed for durability, quality, and long-lasting performance.",
+  logo: jcb,
+},
   ];
 
   const settings = {
