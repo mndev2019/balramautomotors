@@ -180,29 +180,31 @@ const Contact = () => {
         </div>
 
         {/* MAP + FORM */}
-        {/* <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-stretch"> */}
-        <div className="grid grid-cols-1  gap-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-stretch">
+          {/* <div className="grid grid-cols-1  gap-16 items-stretch"> */}
 
           {/* MAP */}
-          {/* <div className="lg:col-span-3 relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
+          <div className="lg:col-span-3 relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
+
             <iframe
               title="Balram Automotive - Kanpur Branch"
-              src="https://maps.google.com/maps?q=123%2F136%2C%201st%20Floor%2C%20Gadanian%20Purwa%2C%20Kanpur%2C%20Uttar%20Pradesh%20208012%2C%20India&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.8141072660555!2d80.30070189999999!3d26.461720399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c474c8e8eb3a1%3A0x5095174142f43c1a!2sblram%20automotive!5e0!3m2!1sen!2sin!4v1792564671619!5m2!1sen!2sin"
               className="w-full h-full min-h-[460px]"
               loading="lazy"
               allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
+              referrerPolicy="strict-origin-when-cross-origin"
             ></iframe>
 
-            <div className="absolute top-6 left-6 bg-white px-6 py-3 rounded-xl shadow-lg border-l-4 border-[#ec2324]">
+
+            {/* <div className="absolute top-6 left-6 bg-white px-6 py-3 rounded-xl shadow-lg border-l-4 border-[#ec2324]">
               <p className="text-sm font-bold text-gray-900">
                 Balram Automotive
               </p>
               <p className="text-xs text-gray-600 mt-1">
                 Kanpur Branch Office
               </p>
-            </div>
-          </div> */}
+            </div> */}
+          </div>
 
 
           {/* FORM */}

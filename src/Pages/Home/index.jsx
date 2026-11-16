@@ -7,6 +7,7 @@ import AboutSection from './AboutSection'
 import TeamSection from './TeamSection'
 import ClientsSection from './ClientSection'
 import MobileDistributor from './MobileDistributor'
+import Blog from '../Blog/Blog'
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Service/>
             <DistributorSection/>
             <MobileDistributor/>
+            <Blog/>
             <TeamSection/>
             <ClientsSection/>
         </>

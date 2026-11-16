@@ -10,6 +10,8 @@ import ServiceDetail from './Pages/ServiceDetail'
 import Shop from './Pages/Shop'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AllBlog from './Pages/Blog/AllBlog'
+import BlogDetail from './Pages/Blog/BlogDetails'
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path='/category-detail' element={<CategoryDetail />} />
           <Route path='/service-detail' element={<ServiceDetail />} />
           <Route path='/shop' element={<Shop />} />
+          <Route path='/all-blog' element={<AllBlog/>}/>
+           <Route path="/blog-detail/:slug" element={<BlogDetail/>}/>
 
 
         </Route>
