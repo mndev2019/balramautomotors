@@ -115,7 +115,7 @@ const BlogDetail = () => {
           <div className="max-w-4xl">
             <span className="inline-flex items-center gap-2 border border-white/25 bg-white/10 rounded-full px-4 py-2 text-sm font-semibold tracking-wide">
               <span className="w-2 h-2 rounded-full bg-white" />
-              BALRAM AUTOMOTIVE
+              BLRAM AUTOMOTIVE
             </span>
 
             <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
@@ -229,14 +229,14 @@ const BlogDetail = () => {
               {/* Why Choose Us */}
               <div className="rounded-2xl border border-gray-200 p-6 md:p-7 bg-gray-50">
                 <h3 className="text-xl font-bold text-gray-900">
-                  Explore Balram Automotive
+                  Explore Blram Automotive
                 </h3>
 
                 <div className="w-12 h-1 bg-[#ec2324] rounded-full mt-3 mb-5" />
 
                 <p className="text-gray-600 leading-7">
                   Explore automotive information, industry insights and
-                  updates from Balram Automotive.
+                  updates from Blram Automotive.
                 </p>
 
                 <Link
@@ -277,7 +277,7 @@ const BlogDetail = () => {
       <section className="bg-gray-50 border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-5 py-14 md:py-16 text-center">
           <span className="text-sm font-bold uppercase tracking-widest text-[#ec2324]">
-            Balram Automotive
+            Blram Automotive
           </span>
 
           <h2 className="mt-3 text-2xl md:text-4xl font-extrabold text-gray-900">

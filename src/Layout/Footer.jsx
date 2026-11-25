@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="bg-white p-2 rounded-sm">
             <img
               src={logo}   // change path if needed
-              alt="Balram Automotive Logo"
+              alt="Blram Automotive Logo"
               className="h-12 w-auto"
             />
 
@@ -85,7 +85,7 @@ const Footer = () => {
           <div className="flex gap-4 mt-2 text-xl">
             {/* YouTube */}
             <a
-              href="https://www.youtube.com/@Balramautomotive"
+              href="https://www.youtube.com/@blramautomotive"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
@@ -96,7 +96,7 @@ const Footer = () => {
 
             {/* Facebook */}
             <a
-              href="https://www.facebook.com/BalramAutomation/"
+              href="https://www.facebook.com/blramautomotive/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -136,7 +136,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <p className="text-center text-gray-400 mt-6 text-sm">
-        © 2026 BALRAM Automotive. All rights reserved. <br />
+        © 2026 BLRAM Automotive. All rights reserved. <br />
         Developed by{" "}
         <a
           href="https://ramot.cloud/"
